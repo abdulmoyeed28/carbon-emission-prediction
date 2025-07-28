@@ -1,0 +1,147 @@
+{% include "header_admin.html" %}
+<div class="container">
+    <form action="http://localhost:5000/eval_alg" method="post">
+    <table> <tr><td style="vertical-align: top">
+   <div id="menu">
+  <ul>
+    <li onclick="hide_lr()">Linear Regression</li>
+    <li onclick="hide_rf()">Random Forest Regression</li>
+    <li onclick="hide_dt()">Decision Tree Regression</li>
+    <li onclick="hide_xgb()">XGB Regression</li>
+    <li onclick="hide_ab()">Adaboost Regression</li>
+    <li onclick="hide_ls()">Lasso Regression</li>
+    <li onclick="hide_ca()">Compare Algorithms</li>
+
+  </ul>
+</div></td>
+        <td>
+
+<div class="lds-ripple" id="gear" style="display: none; margin: 150px"><div></div><div></div></div>
+<div id="AccDisplay"></div>
+     </td>
+</tr>
+</table>
+        <div id="LR" style="display: none">
+        <img src="../static/vis/LR_pred.jpg"><br>
+            <p style="color: maroon; font-size: large; background-color: #E9E9E9"> CV Score for Linear Regression Algorithm : {{acc['LR']}}%</p>
+        </div>
+
+        <div id="RF" style="display: none">
+            <img src="../static/vis/RF_pred.jpg"><br>
+         <p style="color: maroon; font-size: large; background-color: #E9E9E9">   CV Score for Random Forest Regression Algorithm : {{acc['RF']}}%</p>
+        </div>
+        <div id="DT" style="display: none">
+            <img src="../static/vis/DT_pred.jpg"><br>
+         <p style="color: maroon; font-size: large; background-color: #E9E9E9">CV Score for Decision Tree Regression Algorithm : {{acc['DT']}}%</p>
+        </div>
+
+         <div id="XGB" style="display: none">
+        <img src="../static/vis/XGB_pred.jpg"><br>
+            <p style="color: maroon; font-size: large; background-color: #E9E9E9"> CV Score for XGBoost Regression Algorithm : {{acc['XGB']}}%</p>
+        </div>
+
+        <div id="AB" style="display: none">
+            <img src="../static/vis/AB_pred.jpg"><br>
+         <p style="color: maroon; font-size: large; background-color: #E9E9E9">   CV Score for Adaboost Regression Algorithm : {{acc['AB']}}%</p>
+        </div>
+        <div id="LS" style="display: none">
+            <img src="../static/vis/Lasso_pred.jpg"><br>
+         <p style="color: maroon; font-size: large; background-color: #E9E9E9">CV Score for Decision Tree Regression Algorithm : {{acc['Lasso']}}%</p>
+        </div>
+
+        <div id="CA" style="display: none">
+            <img src="../static/vis/AlgComp.jpg" width="800px" height="300px"><br>
+        </div>
+</form>
+</div>
+
+	</div>
+
+<script>
+var myVar;
+
+function hide_lr() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_lr, 1500);
+}
+function show_lr() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('LR').innerHTML;
+}
+
+
+function hide_rf() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_rf, 1500);
+}
+function show_rf() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('RF').innerHTML;
+}
+
+
+function hide_dt() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_dt, 1500);
+}
+function show_dt() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('DT').innerHTML;
+}
+
+function hide_xgb() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_xgb, 1500);
+}
+function show_xgb() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('XGB').innerHTML;
+}
+
+
+function hide_ab() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_ab, 1500);
+}
+function show_ab() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('AB').innerHTML;
+}
+
+
+function hide_ls() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_ls, 1500);
+}
+function show_ls() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('LS').innerHTML;
+}
+
+
+function hide_ca() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_ca, 1500);
+}
+function show_ca() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('CA').innerHTML;
+}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+{% include "header_user.html" %}
+<div class="content">
+
+        <form action="{{ url_for('predict')}}" method="post">
+
+            
+            <h5>Engine Size</h5><input id="second" name="Engine_Size" required="required">         <br><br>
+            <h5>Cylinders</h5><input id="third" name="Cylinders" required="required">    <br><br>
+            <h5>Fuel Consumption City (L/100 km) </h5><input id="third" name="Fuel_Consumption_City" required="required"><br><br>
+            <h5>Fuel Consumption Hwy  (L/100 km) </h5><input id="third" name="Fuel_Consumption_Hwy" required="required">  <br>
+            <h5>Fuel Consumption Comb (L/100 km) </h5><input id="third" name="Fuel_Consumption_Comb" required="required">  <br><br>
+            <h5>Fuel Consumption Comb (mpg) </h5><input id="third" name="Fuel_Consumption_Comb_mpg" required="required">   <br><br>
+           
+           <!--Fuel Type -->
+            
+            <h5>Fuel Types</h5><select name="Fuel_Type" id="research" required="required">
+                <option value="Type_E">Type E</option>
+                <option value="Type_X">Type X</option>
+                <option value="Type_Z">Type Z</option>
+            </select>
+           <br>
+           <br>
+           <!--Transmission-->
+            <h5>Transmission type</h5><select name="Transmission" id="research" required="required">
+                <option value="A4">A4</option>
+                <option value="A5">A5</option>
+                <option value="A6">A6</option>
+                <option value="A7">A7</option>
+                <option value="A8">A8</option>
+                <option value="A9">A9</option>
+                <option value="AM5">AM5</option>
+                <option value="AM6">AM6</option>
+                <option value="AM7">AM7</option>
+                <option value="AM8">AM8</option>
+                <option value="AM9">AM9</option>
+                <option value="AS4">AS4</option>
+                <option value="AS5">AS5</option>
+                <option value="AS6">AS6</option>
+                <option value="AS7">AS7</option>
+                <option value="AS8">AS8</option>
+                <option value="AS9">AS9</option>
+                <option value="AS10">AS10</option>
+                <option value="AV">AV</option>
+                <option value="AV6">AV6</option>
+                <option value="AV7">AV7</option>
+                <option value="AV8">AV8</option>
+                <option value="AV10">AV10</option>
+                <option value="M5">M5</option>
+                <option value="M6">M6</option>
+                <option value="M7">M7</option>
+            </select>
+            <br>
+
+           <br>
+           <!--Make-->
+           
+            <h5>Make</h5><select name="Make" id="research" required="required">
+                <option value="Luxury">Luxury</option>
+                <option value="Premium">Premium</option>
+                <option value="Sports">Sports</option>
+            </select>
+
+            <br><br>
+
+
+           <!--Vichle Class-->
+            <h5>Vechicle Class</h5><select name="Vehicle_Class" id="research" required="required">
+                <option value="SUV">SUV</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Truck">Truck</option>                
+            </select>
+
+            <br><br><button id="sub" type="submit ">Calculate Co2</button>
+            <br>
+
+        </form>
+
+
+
+    <br><br><h2>{{ prediction_text }}</h2>
+    </div>
+</body>
+</html>
+
+
+
+
+

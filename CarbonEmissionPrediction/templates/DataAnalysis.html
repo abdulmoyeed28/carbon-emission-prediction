@@ -1,0 +1,129 @@
+{% include "header_admin.html" %}
+<div class="container">
+    <table> <tr><td style="vertical-align: top">
+   <div id="menu">
+  <ul>
+    <li onclick="hide_mcc()">Vehicle Class Analysis</li>
+    <li onclick="hide_mcd()">Transmission Analysis</li>
+    <li onclick="hide_mcr()">Fuel Type Analysis</li>
+    <li onclick="hide_adc()">Model Analysis</li>
+    <li onclick="hide_udc()">Make Analysis</li>
+    <li onclick="hide_ct()">Feature Correlation</li>
+
+  </ul>
+</div></td>
+        <td>
+
+<div class="lds-ripple" id="loader" style="display: none; margin: 150px"><div></div><div></div></div>
+<div id="AccDisplay"></div>
+     </td>
+</tr>
+</table>
+<div id="mcc" style="display: none">
+     <img src="../static/vis/veh_cls.jpg"  width="600px" height="300px">
+</div>
+
+<div id="mcd" style="display: none">
+     <img src="../static/vis/trans.jpg"  width="600px" height="300px">
+</div>
+
+<div id="mcr" style="display: none">
+     <img src="../static/vis/ftype.jpg"  width="600px" height="300px">
+</div>
+
+<div id="adc" style="display: none">
+     <img src="../static/vis/model.jpg"  width="600px" height="300px">
+</div>
+
+<div id="udc" style="display: none">
+     <img src="../static/vis/make.jpg"  width="600px" height="300px">
+</div>
+
+<div id="ct" style="display: none">
+     <img src="../static/vis/corr.jpg"  width="450px" height="450px">
+</div>
+
+</div>
+
+	</div>
+
+<script>
+var myVar;
+
+function hide_mcc() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("loader").style.display = "block";
+  myVar = setTimeout(show_mcc, 1500);
+}
+
+function show_mcc() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('mcc').innerHTML;
+}
+
+function hide_mcd() {
+    document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("loader").style.display = "block";
+  myVar = setTimeout(show_mcd, 1500);
+}
+
+function show_mcd() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('mcd').innerHTML;
+}
+
+function hide_mcr() {
+    document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("loader").style.display = "block";
+  myVar = setTimeout(show_mcr, 1500);
+}
+
+function show_mcr() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('mcr').innerHTML;
+}
+
+function hide_adc() {
+    document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("loader").style.display = "block";
+  myVar = setTimeout(show_adc, 1500);
+}
+
+function show_adc() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('adc').innerHTML;
+}
+
+function hide_udc() {
+    document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("loader").style.display = "block";
+  myVar = setTimeout(show_udc, 1500);
+}
+
+function show_udc() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('udc').innerHTML;
+}
+
+function hide_ct() {
+    document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("loader").style.display = "block";
+  myVar = setTimeout(show_ct, 1500);
+}
+
+function show_ct() {
+document.getElementById("loader").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+document.getElementById('AccDisplay').innerHTML=document.getElementById('ct').innerHTML;
+}
+
+
+</script>
+</body>
+
+</html>

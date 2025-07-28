@@ -1,0 +1,11 @@
+{% include "header_admin.html" %}
+<div class="content">
+
+     <form action = "http://localhost:5000/admin_upload" method = "post" enctype="multipart/form-data">
+        <br><br>
+         Upload Training data file: <input type="file" name="file" /><br><br><br>
+        <input type="image" name="submit" src="static/img/up.png" class="send"/><br><br>
+         <div class="msg">{{ msg }}</div>
+    </form>
+
+</div>

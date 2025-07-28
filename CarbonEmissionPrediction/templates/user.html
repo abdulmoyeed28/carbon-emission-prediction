@@ -1,0 +1,17 @@
+{% include "header.html" %}
+<div class="content">
+                <center>
+                <form action="http://localhost:5000/user_home" method="post">
+
+                <h1>User Login</h1><br>
+                <ol style="list-style: none">
+                    <li><input type="text" name="user" placeholder="User ID" required="" /></li><br>
+                    <li><input type="password" name="pwd" placeholder="Password" required="" /></li><br>
+                    <li><input type="image" name="submit" src="static/img/sub.png" class="send"/></li><br>
+                </ol>
+                <div class="msg">{{ msg }}</div>
+                </form>
+                <br><br><br><br><br><br>
+                </center>
+            </div>
+

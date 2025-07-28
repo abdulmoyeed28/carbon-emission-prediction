@@ -1,0 +1,36 @@
+{% include "header_admin.html" %}
+<div class="container">
+
+    <div style="width: 800px; height: 190px">
+        <br><br>
+    <button onclick="hide_Acc()">Click here to create the model</button>
+        <div class="lds-ripple" id="gear" style="display: none; margin: 150px"><div></div><div></div></div>
+<div id="AccDisplay" style="display: none; width:800px; height:170px">
+    <p style="color: green;font-size: large">{{ msg }}</p><br>
+    <p style="color: green;font-size: large">Accuracy of the model is {{ acc }}%</p><br>
+
+
+
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
+
+<script>
+var myVar;
+
+function hide_Acc() {
+  document.getElementById("AccDisplay").style.display = "none";
+  document.getElementById("gear").style.display = "block";
+  myVar = setTimeout(show_Acc, 3000);
+}
+function show_Acc() {
+document.getElementById("gear").style.display = "none";
+document.getElementById("AccDisplay").style.display = "block";
+}
+
+</script>
+
